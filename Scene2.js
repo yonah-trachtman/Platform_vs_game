@@ -75,7 +75,7 @@ class Scene2 extends Phaser.Scene{
         this.background.tilePositionY -= 0.5;
         this.movePlayerManager();
         if (Phaser.Input.Keyboard.JustDown(this.spacebar)){
-          console.log("Fire!");
+          this.shootBeam();
         }
 
     }
@@ -94,5 +94,8 @@ class Scene2 extends Phaser.Scene{
   } else {
     this.player.setVelocityY(0)
   }
+  }
+  shootBeam(){
+    let beam = this.physics.add.sprite(this.player.x, this.player.y, "beam");
   }
 }
